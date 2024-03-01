@@ -5,10 +5,7 @@ export default class Todo extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [
-        { id: 1, task: "Revise JS" },
-        { id: 2, task: "Revise DSA Level-1" },
-      ],
+      tasks: [],
       curTask: "",
     };
   }
@@ -47,20 +44,20 @@ export default class Todo extends Component {
       //jsx starts
       // <div>Todo</div>
       <div>
-        <input
+        <input className='input'
           type="text"
           value={this.state.curTask}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <button className='submit' onClick={this.handleSubmit}>Submit</button>
 
         {
           // use when need to write JS in jsx
-          this.state.tasks.map((taskObj)=>{
+          this.state.tasks.map((taskObj)=> {
             return (
-              <li key={taskObj.id}>
+              <li className='task' key={taskObj.id}>
                 <p>{taskObj.task}</p>
-                <button onClick={() => this.handleDeleteTasks(taskObj.id)}>
+                <button className='remove' onClick={() => this.handleDeleteTasks(taskObj.id)}>
                   Delete
                 </button>
               </li>
