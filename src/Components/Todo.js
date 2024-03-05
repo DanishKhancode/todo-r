@@ -45,7 +45,7 @@ export default class Todo extends Component {
       // <div>Todo</div>
       <div>
         <input className='input'
-          type="text"
+          type="text"  placeholder="Add Task"
           value={this.state.curTask}
           onChange={this.handleChange}
         />
